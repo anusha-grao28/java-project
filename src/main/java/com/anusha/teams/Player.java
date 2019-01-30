@@ -6,13 +6,10 @@ public class Player {
     private String firstName;
     private String lastName;
     private Integer age;
-    private Long phoneNumbers;
-    /// make this a list
-    /// private List<Integer> phoneNumbers;
-    // this variable cannot hold many numbers. so you will need a datastructure to hold many things.. we can use list here as we are not bothered
-    //uniqueness  and maintaining insertion order setc
+    private List<Integer> phoneNumbers;
 
-    public Player(String firstName, String lastName, Integer age, Long phoneNumbers) {
+
+    public Player(String firstName, String lastName, Integer age, List<Integer> phoneNumbers) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -43,11 +40,11 @@ public class Player {
         this.age = age;
     }
 
-    public Long getPhoneNumbers() {
+    public List<Integer> getPhoneNumbers() {
         return phoneNumbers;
     }
 
-    public void setPhoneNumbers(Long phoneNumbers) {
+    public void setPhoneNumbers(List<Integer> phoneNumbers) {
         this.phoneNumbers = phoneNumbers;
     }
 
