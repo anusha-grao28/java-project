@@ -1,15 +1,18 @@
 package com.anusha.bank;
 
+import java.util.List;
+
 public class Bank {
     private String name;
     private String townName;
 
-    private Customer customer;
+   // now use refactor
+    private List<Customer> customers;
 
-    public Bank(String name, String townName, Customer customer) {
+    public Bank(String name, String townName, List<Customer> customers) {
         this.name = name;
         this.townName = townName;
-        this.customer = customer;
+        this.customers = customers;
     }
 
     public String getName() {
@@ -28,11 +31,20 @@ public class Bank {
         this.townName = townName;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public List<Customer> getCustomers() {
+        return customers;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
     }
+
+   /* @Override
+    /*public String toString() {
+        return "Bank{" +
+                "name='" + name + '\'' +
+                ", townName='" + townName + '\'' +
+                ", customers=" + customers +
+                '}';
+    }*/
 }
