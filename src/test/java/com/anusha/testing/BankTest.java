@@ -7,7 +7,6 @@ import com.anusha.bank.Bank;
 import org.junit.Test;
 
 public class BankTest {
-    @Test
-public void
+
 
 }

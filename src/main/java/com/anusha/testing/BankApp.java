@@ -1,9 +1,6 @@
 package com.anusha.testing;
 
-import com.anusha.bank.Account;
-import com.anusha.bank.Bank;
-import com.anusha.bank.Customer;
-import com.anusha.bank.TransactionHistory;
+import com.anusha.bank.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,11 +10,11 @@ public class BankApp {
     public static void main(String[] args) {
 
 
-// is it correct
+
         // all accounts belong to same bank, then why different IFSC code? i
-        Account anushaAccount = new Account(456123, "SBIK1014", 650000);
-        Account priyaAccount = new Account(789456, "SBIK1014", 9541236);
-        Account dhanuAccount = new Account(951753, "SBIK1014", 2501478);
+        Account anushaAccount = new Account(456123, "SBIK1014", 100);
+        Account priyaAccount = new Account(789456, "SBIK1014", 200);
+        Account dhanuAccount = new Account(951753, "SBIK1014", 300);
 
         ArrayList<Account> accounts = new ArrayList<>();
 
@@ -71,6 +68,10 @@ public class BankApp {
 
         Bank bank = new Bank("SBI", "BNGLR", customerDetails);
 
+// use the utitlity class here and output the customer object with the highest amount
+ // check if your logic is running fine and fix this by morning. I have to finish work, and will leave it to you.
+        Customer highestAmountCustomer = BankUtility.getCustomerWithHighestDeposit(bank);
 
+        System.out.println("Customer with highest bank balance is "+ highestAmountCustomer.getName() + " with value "+highestAmountCustomer.getAccount().getAmount());
     }
 }
