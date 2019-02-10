@@ -9,8 +9,6 @@ import java.util.List;
 public class BankApp {
     public static void main(String[] args) {
 
-
-
         // all accounts belong to same bank, then why different IFSC code? i
         Account anushaAccount = new Account(456123, "SBIK1014", 100);
         Account priyaAccount = new Account(789456, "SBIK1014", 200);

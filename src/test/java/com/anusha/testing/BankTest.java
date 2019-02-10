@@ -9,4 +9,5 @@ import org.junit.Test;
 public class BankTest {
 
 
+    //now run your arralist program
 }
