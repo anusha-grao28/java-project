@@ -30,9 +30,9 @@ public class AN006_MapsProgs {
             System.out.println(entry.getKey()+" : "+entry.getValue());
         }
         System.out.println("----------------\n");
-        //3. to print the third element of the map
+        //3. to print the second element of the map
         System.out.println(" the elements of the map is: "+hmap.size());
-        System.out.println("the third element from the map is: "+hmap.get(3));
+        System.out.println("the second element from the map is: "+hmap.get(2));
 
 
     }
