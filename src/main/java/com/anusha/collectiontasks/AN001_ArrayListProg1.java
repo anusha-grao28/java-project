@@ -1,25 +1,55 @@
 package com.anusha.collectiontasks;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import com.anusha.polymorphism.Animal;
+import com.anusha.polymorphism.Cat;
+import com.anusha.polymorphism.Dog;
+import com.anusha.util.ArrayUtils;
+
+import java.util.*;
 
 public class AN001_ArrayListProg1 {
     public static void main(String[]  args) {
+   /* Animal a=new Dog();
+    Animal c=new Cat();
+Cat cat=new Cat();
+Dog dog=new Dog();
+a=cat;    //upcasting
+
+        List list=new LinkedList();
+        list=new ArrayList();
+        list=new Vector();
+        Deque que=new LinkedList();
+        que=new LinkedList(); */
+
+/*short a=1;
+        Integer b=a; //autoboxing
+       // Long c=a;
+        double d=a;
+       // Double e=a;
+        //Float f=a;
+        float g=2.5f;
+        //Double h=g;
+        Short s=a;*/
+
+
+
+
+
+
 
         // 1. to print odd and even numbers from given  arraylist of integers
         int[] myArray = {1, 20, 31, 9, 28, 37, 12, 45, 89, 96, 67};
-        ArrayList<Integer> evenList = new ArrayList<Integer>();
-        ArrayList<Integer> oddList = new ArrayList<Integer>();
+        List<Integer> evenList = ArrayUtils.getEvenNumbers(myArray);
+        List<Integer> oddList = ArrayUtils.getOddNumbers(myArray);
 
-        System.out.println("\n to print the odd and even numbers from arraylist of integers is: \n");
+       /* System.out.println("\n to print the odd and even numbers from arraylist of integers is: \n");
         for (int i = 0; i <myArray.length; i++) {
             if (myArray[i] % 2 == 0) {
                 evenList.add(myArray[i]);
             } else {
                 oddList.add(myArray[i]);
             }
-        }
+        } */
 
             //to print even numbers from arraylist
         Collections.sort(evenList);
