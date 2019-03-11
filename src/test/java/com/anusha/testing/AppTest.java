@@ -11,6 +11,7 @@ import java.util.*;
 
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -243,8 +244,72 @@ public void shouldDisplayAscendingOrderArraylistPrimitive(){
     Assert.assertEquals(expectedHighest,actualHighest);
 
 }
+/*
+ @Test
+    public void  shouldCheckElementsCopied(){
+     ArrayList<Integer> arrayList1 = new ArrayList<>();
 
-@Test
-    public
+     arrayList1.add(100);
+     arrayList1.add(200);
+     arrayList1.add(300);
+
+     ArrayList arrayList2 = new ArrayList();
+
+     arrayList2.add(400);
+     arrayList2.add(500);
+     arrayList2.add(600);
+     arrayList2.add(700);
+     arrayList2.add(800);
+
+List<Integer> actual=ArrayUtils.getCopiedElementsIntoAnotherList();
+List<Integer> expected=
+        assertThat(actual.getList(), containsInAnyOrder(expectedList.toArray(new String[expectedList.size()]));
+
+ }  */
+
+ @Test
+    public void shouldCheckForStringListLength(){
+     List<String> myString=new ArrayList<>();
+     myString.add("Anusha");
+     myString.add("Gopal");
+     myString.add("Goutham");
+     myString.add("Sriraksha");
+
+     int actual=myString.size();
+     int expected=4;
+
+     Assert.assertEquals(expected,actual);
+ }
+
+ @Test
+    public void shouldCheckForAddedString(){
+     String a="Goutham";
+     String b="Rao";
+     String c=a+b;
+
+     String actual=c;
+     String expected="GouthamRao";
+
+     Assert.assertEquals(expected,actual);
+
+ }
+
+ @Test
+    public void shouldDisplayUppercasedString(){
+
+     String str="anusha";
+     String actual=str.toUpperCase();
+     String expected="ANUSHA";
+     assertEquals(expected,actual);
+
+ }
+
+ @Test
+ public void shouldDisplayParsedIntegerValue(){
+     int number=2;
+     Integer actual=Integer.valueOf(number);
+     Integer expected=2;
+     assertEquals(expected,actual);
+ }
 }
 
