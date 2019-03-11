@@ -290,8 +290,8 @@ List<Integer> expected=
      String actual=c;
      String expected="GouthamRao";
 
-     Assert.assertEquals(expected,actual);
-
+     //Assert.assertEquals(expected,actual);
+     assertThat(c, is("GouthamRao"));
  }
 
  @Test
