@@ -151,7 +151,7 @@ public class AppTest{
 // to check the list display in ascending order
 @Test
     public void shouldDisplayAscendingOrderArraylist(){
-    ArrayList<Integer> myArr = new ArrayList<>();
+         ArrayList<Integer> myArr = new ArrayList<>();
     myArr.add(15);
     myArr.add(98);
     myArr.add(75);
@@ -159,6 +159,10 @@ public class AppTest{
     myArr.add(88);
     myArr.add(9);
     myArr.add(25);
+
+      /*  Integer[] arr=new Integer[]{15,98,75,59,88,9,25};
+
+    List<Integer> myArr=Arrays.asList(arr); */
 
    List<Integer> ascendingOrder=ArrayUtils.getAscendingOrderElementList(myArr);
 
@@ -208,6 +212,8 @@ public void testSortAscendingDescending() throws Exception {
     numberList.add(88);
     numberList.add(9);
     numberList.add(25);
+
+
     AN001_ArrayListElementAscDesc sortArrayList = new AN001_ArrayListElementAscDesc(numberList);
     ArrayList<Integer> unsortedArrayList = sortArrayList.getArrayList();
     System.out.println("Unsorted ArrayList: " + unsortedArrayList);

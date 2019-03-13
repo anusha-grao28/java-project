@@ -6,46 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class ArrayUtils {
-    public static Integer[] getEvenNmbers(int[] numbers) {
-        return null;
-    }
 
-    public static String getName(String name) {
-        return name;
-    }
-
-    public static Long getPhone(Long phone) {
-        return phone;
-    }
-
-    public static void getNumbers(Integer number, String name) {
-
-    }
-
-    public static void getMethods() {
-    }
-
-    public static void getMethod(int[] myArray) {
-    }
-
-    public static void getMethod(String[] myArray) {
-    }
-
-    public static List<String> getMethodName(List<String> myList) {
-        return null;
-    }
-
-    public static Integer getMethodInteger(List<Integer> myNumber) {
-        return null;
-    }
-
-    public static List<Integer> getIntegers(List<Integer> myNum) {
-        return myNum;
-    }
-
-    public static List<Integer> gerEvenNumbers(ArrayList<Integer> evenNum) {
-        return null;
-    }
 
     //1 method to print odd and even numbers
 
@@ -54,7 +15,7 @@ public class ArrayUtils {
         ArrayList<Integer> evenList = new ArrayList<Integer>();
         ArrayList<Integer> oddList = new ArrayList<Integer>();
 
-        System.out.println("\n to print the odd and even numbers from arraylist of integers is: \n");
+
         for (int i = 0; i < myArray.length; i++) {
             if (myArray[i] % 2 == 0) {
                 evenList.add(myArray[i]);
@@ -71,7 +32,7 @@ public class ArrayUtils {
         ArrayList<Integer> evenList = new ArrayList<Integer>();
         ArrayList<Integer> oddList = new ArrayList<Integer>();
 
-        System.out.println("\n to print the odd and even numbers from arraylist of integers is: \n");
+
         for (int i = 0; i < myArray.length; i++) {
             if (myArray[i] % 2 == 0) {
                 evenList.add(myArray[i]);
@@ -131,23 +92,7 @@ public class ArrayUtils {
         return arrayList2;
     }
 
-   /* public static List<String> getElementPresentInlist(ArrayList<String> myStr){
-        String name="";
-        boolean nameCheck=myStr.contains(name);
 
-        if (nameCheck)
-            System.out.println(nameCheck+" gopal is in the list");
-        else
-            System.out.println(nameCheck+" gopal is not in the list");
-
-
-        boolean nameCheck1=myStr.contains(name);
-        if (nameCheck)
-            System.out.println(nameCheck1+" aditya is in the list");
-        else
-            System.out.println(nameCheck1+" aditya is not in the list");
-return myStr;
-    } */
 
 
 }
