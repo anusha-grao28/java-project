@@ -86,13 +86,10 @@ public class AppTest{
     List<Integer> oddList = ArrayUtils.getOddNumbers(myArray);
     boolean actual = oddList.contains(20);
 
-    //
-    //List<Integer> expected = Arrays.asList(20,28,12,96);
-
     Assert.assertFalse(actual);
-    Collections.sort(oddList);
+    /*Collections.sort(oddList);
     for (int odd : oddList)
-        System.out.print(odd + ",");
+        System.out.print(odd + ","); */
 }
 
 // to check for the arraylist size
@@ -276,12 +273,14 @@ List<Integer> expected=
 
  @Test
     public void shouldCheckForStringListLength(){
-     List<String> myString=new ArrayList<>();
+    /* List<String> myString=new ArrayList<>();
      myString.add("Anusha");
      myString.add("Gopal");
      myString.add("Goutham");
      myString.add("Sriraksha");
-
+*/
+    String[] str=new String[]{"Anusha","Gopal","Goutham","Sriraksha"};
+    List<String> myString=Arrays.asList(str);
      int actual=myString.size();
      int expected=4;
 
@@ -313,9 +312,15 @@ List<Integer> expected=
 
  @Test
  public void shouldDisplayParsedIntegerValue(){
-     int number=2;
+   /*  int number=2;
      Integer actual=Integer.valueOf(number);
      Integer expected=2;
+     assertEquals(expected,actual); */
+
+     String s = "4";
+     Integer number=Integer.parseInt(s);
+     Integer actual=number;
+     Integer expected=4;
      assertEquals(expected,actual);
  }
 
