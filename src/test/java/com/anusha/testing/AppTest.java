@@ -7,12 +7,12 @@ import junit.framework.TestSuite;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
 /**
  * Unit test for simple App.
@@ -223,7 +223,9 @@ public void testSortAscendingDescending() throws Exception {
 // convert from wrapper to primitive and display ascending and descending order
 @Test
 public void shouldDisplayAscendingOrderArraylistPrimitive(){
-    ArrayList<Integer> myArr = new ArrayList<>();
+
+
+         ArrayList<Integer> myArr = new ArrayList<>();
     myArr.add(15);
     myArr.add(98);
     myArr.add(75);
@@ -231,6 +233,11 @@ public void shouldDisplayAscendingOrderArraylistPrimitive(){
     myArr.add(88);
     myArr.add(9);
     myArr.add(25);
+
+    //alt. mtd
+
+       /*Integer[] array=new Integer[]{15,98,75,59,88,9,25};
+        List<Integer> myArr=Arrays.asList(array); */
 
     List<Integer> ascendingOrder=ArrayUtils.getAscendingOrderElementList(myArr);
 
@@ -311,5 +318,51 @@ List<Integer> expected=
      Integer expected=2;
      assertEquals(expected,actual);
  }
+
+ @Test
+    public void shouldCheckElementPresentInList(){
+
+     String[] myStr=new String[]{"Goutham","SriRaksha","Anusha","Gopal"};
+     List<String> myList=Arrays.asList(myStr);
+
+     boolean actual=myList.contains("Gopal");
+    assertTrue(actual);
+
+    boolean actuals=myList.contains("Aditya");
+    assertFalse(actuals);
+ }
+
+@Test
+    public void shouldReturnSecondHighestElementFromList(){
+Integer[] array=new Integer[]{100,12,5,45,78};
+List<Integer> myArray=Arrays.asList(array);
+    int secondLargest = myArray.get(0);
+    int largest = myArray.get(0);
+    for (int i = 0; i < myArray.size(); i++)
+    {
+        if(myArray.get(i) > secondLargest)
+        {
+            if(myArray.get(i) > largest ) {
+                secondLargest = largest;
+                largest = myArray.get(i);
+            } else {
+                secondLargest = myArray.get(i);
+            }
+        }
+    }
+  Integer actual=largest;
+    Integer expected=78;
+    assertEquals(expected,actual);
 }
+
+@Test
+    public void shouldCheckForStringBuilderElementsAppending(){
+     StringBuilder sb=new StringBuilder();
+    sb.append(new Integer(9));
+    String actual = sb.toString() ;
+    assertEquals( "9" , actual);
+}
+
+}
+
 
