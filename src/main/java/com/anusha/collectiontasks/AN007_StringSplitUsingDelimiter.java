@@ -7,6 +7,10 @@ public static void main(String[] args){
 
     for(int i=0;i<parts.length;i++){
     System.out.println(parts[i]);
+
+
+    /// this should be tested using matchers.
+        //refer to the link from git hub comments
 }
 }
 }

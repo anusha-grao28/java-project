@@ -65,6 +65,9 @@ public class ArrayListTest {
 
         Collections.copy(arrayList2, arrayList1);
 
+
+        // TODO use matchers
+        //use guide https://www.baeldung.com/hamcrest-collections-arrays .
        // System.out.println("After copy, Second ArrayList Contains : " + arrayList2);
     }
 

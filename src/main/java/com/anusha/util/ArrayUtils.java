@@ -12,6 +12,10 @@ public class ArrayUtils {
 
     public static List<Integer> getEvenNumbers(int[] myArray) {
 
+
+
+        // remove logic for odd numbers here
+        // when you will only evenList , why keep oddList here
         ArrayList<Integer> evenList = new ArrayList<Integer>();
         ArrayList<Integer> oddList = new ArrayList<Integer>();
 
@@ -29,6 +33,8 @@ public class ArrayUtils {
 
     public static List<Integer> getOddNumbers(int[] myArray) {
         // int[] myArray = {1, 20, 31, 9, 28, 37, 12, 45, 89, 96, 67};
+
+        //same thing here .. remove evenList and the logic belows
         ArrayList<Integer> evenList = new ArrayList<Integer>();
         ArrayList<Integer> oddList = new ArrayList<Integer>();
 
