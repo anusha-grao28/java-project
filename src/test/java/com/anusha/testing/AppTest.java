@@ -10,9 +10,11 @@ import org.junit.Test;
 import java.lang.reflect.Array;
 import java.util.*;
 
-
+import static org.hamcrest.Matchers.*;
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNot.not;
 import static org.junit.Assert.*;
+import static org.junit.internal.matchers.IsCollectionContaining.hasItem;
 
 /**
  * Unit test for simple App.
@@ -24,15 +26,16 @@ public class AppTest{
 
         Calculator cal = new Calculator();
         Integer result = cal.add(1, 2);
-        Assert.assertEquals(new Integer(3),result);
-
+       // Assert.assertEquals(new Integer(3),result);
+assertThat(result,is(3));
     }
 
     @Test
     public void shouldSubractNegativeValues(){
         Calculator cal = new Calculator();
         Integer result = cal.add(5, -4);
-        Assert.assertEquals(new Integer(1),result);
+       // Assert.assertEquals(new Integer(1),result);
+        assertThat(result,is(1));
     }
 
     @Test
@@ -40,18 +43,18 @@ public class AppTest{
     {
         Calculator cal = new Calculator();
         Integer result = cal.subtract(4, 2);
-        Assert.assertEquals(new Integer(2),result);
-
+       // Assert.assertEquals(new Integer(2),result);
+        assertThat(result,is(2));
     }
 
     @Test
     public void shouldMultiplyTwoIntegers(){
         Calculator cal = new Calculator();
         Integer result = cal.multiply(4, 2);
-        Assert.assertEquals(new Integer(8),result);
-
+      //  Assert.assertEquals(new Integer(8),result);
+        assertThat(result,is(8));
     }
-    // to check for printing even and odd numbers
+
 @Test
     public void shouldREturnEvenValues(){
     int[] myArray = {1, 20, 31, 9, 28, 37, 12, 45, 89, 96, 67};
@@ -62,6 +65,7 @@ public class AppTest{
     //List<Integer> expected = Arrays.asList(20,28,12,96);
 
     Assert.assertFalse(actual);
+
 }
 
 @Test
@@ -77,9 +81,15 @@ public class AppTest{
     public void shouldDisplayArrayListSize(){
     List<Integer> myArr=Arrays.asList(15,98,75,59,88,9,25);
     Assert.assertEquals(7,myArr.size());
+
+    //using hamcrest matchers methods
+    List<Integer> myArray=Arrays.asList(15,98,75,59,88,9,25);
+    assertThat(myArray, hasSize(7));
+
 }
 
-@Test
+
+    @Test
  public void shouldDisplayRemovedFirstElementFromArrayList() {
     List<Integer> myArr=Arrays.asList(15,98,75,59,88,9,25);
 
@@ -89,9 +99,15 @@ public class AppTest{
    Assert.assertEquals(6,myArr.size()); */
 
     //2.method
-    Assert.assertTrue(myArr.contains(15));
+    //Assert.assertTrue(myArr.contains(15));
     myArr.remove(0);
     Assert.assertFalse(myArr.contains(15));
+
+    //using hamcrest matchers
+       /* List<Integer> myArrays=Arrays.asList(15,98,75,59,88,9,25);
+        assertThat(myArrays,hasItem(15));
+        myArrays.remove(0);
+        assertThat(myArrays,not(hasItem(15))); */
 }
 
 @Test
@@ -101,12 +117,16 @@ public class AppTest{
     Assert.assertTrue(myArr.contains(25));
     myArr.remove(myArr.size() - 1);
     Assert.assertFalse(myArr.contains(25));
+   //using hamcrest matchers
+         /*List<Integer> myArrays=Arrays.asList(15,98,75,59,88,9,25);
+        assertThat(myArrays,hasItem(25));
+    myArr.remove(myArr.size() - 1);
+        assertThat(myArrays,not(hasItem(25))); */
 }
-
 
 @Test
     public void shouldDisplayAscendingOrderArraylist(){
-    //TODO fix this to use Arrays.asList
+
 
     ArrayList<Integer> myArr = new ArrayList<>();
     myArr.add(15);
@@ -117,9 +137,8 @@ public class AppTest{
     myArr.add(9);
     myArr.add(25);
 
-      /*  Integer[] arr=new Integer[]{15,98,75,59,88,9,25};
-
-    List<Integer> myArr=Arrays.asList(arr); */
+      // Integer[] arr=new Integer[]{15,98,75,59,88,9,25};
+   // List<Integer> myArr=Arrays.asList(arr);
 
    List<Integer> ascendingOrder=ArrayUtils.getAscendingOrderElementList(myArr);
 
@@ -132,13 +151,13 @@ public class AppTest{
     Assert.assertEquals(expectedLowest,actualLowest);
     Assert.assertEquals(expectedHighest,actualHighest);
 
+  /* List<Integer> myList=Arrays.asList(98,35,76,5,41,26,58,82,11);
+   Assert.assertThat(myList,contains(5,11,26,35,41,58,76,82,98)); */
 }
 
 @Test
 public void shouldDisplayDescendingOrderArraylist(){
-    //TODO fix this to use Arrays.asList
-
-    ArrayList<Integer> myArr = new ArrayList<>();
+   ArrayList<Integer> myArr = new ArrayList<>();
     myArr.add(15);
     myArr.add(98);
     myArr.add(75);
@@ -158,14 +177,16 @@ public void shouldDisplayDescendingOrderArraylist(){
     Assert.assertEquals(expectedLowest,actualLowest);
     Assert.assertEquals(expectedHighest,actualHighest);
 
+   /* List<Integer> myList=Arrays.asList(98,35,76,5,41,26,58,82,11);
+    assertThat(myList,contains(98,82,76,58,41,35,26,11,5)); */
+
 }
 
 @Test
 public void shouldDisplayAscendingOrderArraylistPrimitive(){
-    // TODO fix this to use Arrays.asList
 
 
-         ArrayList<Integer> myArr = new ArrayList<>();
+        ArrayList<Integer> myArr = new ArrayList<>();
     myArr.add(15);
     myArr.add(98);
     myArr.add(75);
@@ -176,7 +197,7 @@ public void shouldDisplayAscendingOrderArraylistPrimitive(){
 
     //alt. mtd
 
-       /*Integer[] array=new Integer[]{15,98,75,59,88,9,25};
+      /* Integer[] array=new Integer[]{15,98,75,59,88,9,25};
         List<Integer> myArr=Arrays.asList(array); */
 
     List<Integer> ascendingOrder=ArrayUtils.getAscendingOrderElementList(myArr);
@@ -189,36 +210,9 @@ public void shouldDisplayAscendingOrderArraylistPrimitive(){
 
     Assert.assertEquals(expectedLowest,actualLowest);
     Assert.assertEquals(expectedHighest,actualHighest);
-
+ /* List<Integer> myList=Arrays.asList(98,35,76,5,41,26,58,82,11);
+    assertThat(myList,contains(5,11,26,35,41,58,76,82,98)); */
 }
 
-
-@Test
-
-// check comment for this in git hub
-    public void shouldReturnSecondHighestElementFromList(){
-Integer[] array=new Integer[]{100,12,5,45,78};
-List<Integer> myArray=Arrays.asList(array);
-    int secondLargest = myArray.get(0);
-    int largest = myArray.get(0);
-    for (int i = 0; i < myArray.size(); i++)
-    {
-        if(myArray.get(i) > secondLargest)
-        {
-            if(myArray.get(i) > largest ) {
-                secondLargest = largest;
-                largest = myArray.get(i);
-            } else {
-                secondLargest = myArray.get(i);
-            }
-        }
-    }
-  Integer actual=largest;
-    Integer expected=78;
-    assertEquals(expected,actual);
 }
-
-
-}
-
 

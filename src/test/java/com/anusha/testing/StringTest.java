@@ -6,8 +6,12 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.hamcrest.core.Is.is;
+
+import static org.hamcrest.core.IsNot.not;
 import static org.junit.Assert.*;
+import static org.junit.internal.matchers.IsCollectionContaining.hasItem;
 
 public class StringTest {
     @Test
@@ -24,25 +28,36 @@ public class StringTest {
         String[] myStr=new String[]{"Goutham","SriRaksha","Anusha","Gopal"};
         List<String> myList= Arrays.asList(myStr);
 
-        boolean actual=myList.contains("Gopal");
+     /*   boolean actual=myList.contains("Gopal");
         assertTrue(actual);
 
         boolean actuals=myList.contains("Aditya");
-        assertFalse(actuals);
+        assertFalse(actuals); */
+
+        assertThat(myList,hasItem("Gopal"));
+
     }
 
     @Test
-    public void shouldDisplayParsedIntegerValue(){
+    public void ahouldCheckElementNotPresentInList(){
+        String[] myStr=new String[]{"Goutham","SriRaksha","Anusha","Gopal"};
+        List<String> myList= Arrays.asList(myStr);
+        assertThat(myList,not(hasItem("aditya")));
+    }
+
+    @Test
+    public void shouldDisplayParsedIntegerValue() {
    /*  int number=2;
      Integer actual=Integer.valueOf(number);
      Integer expected=2;
      assertEquals(expected,actual); */
 
         String s = "4";
-        Integer number=Integer.parseInt(s);
-        Integer actual=number;
-        Integer expected=4;
-        assertEquals(expected,actual);
+        Integer number = Integer.parseInt(s);
+        Integer actual = number;
+        Integer expected = 4;
+        assertEquals(expected, actual);
+
     }
 
     @Test
@@ -51,7 +66,10 @@ public class StringTest {
         String str="anusha";
         String actual=str.toUpperCase();
         String expected="ANUSHA";
-        assertEquals(expected,actual);
+        //assertEquals(expected,actual);
+
+       // assertThat(actual,is(expected));
+        assertThat(actual,is("ANUSHA"));
 
     }
 
@@ -75,7 +93,8 @@ public class StringTest {
         int actual=myString.size();
         int expected=4;
 
-        Assert.assertEquals(expected,actual);
+      //  Assert.assertEquals(expected,actual);
+        assertThat(myString,hasSize(4));
     }
 
     @Test
@@ -89,13 +108,22 @@ public class StringTest {
 
     @Test
     public void shouldReturnReveresedString(){
-      StringBuilder sb=new StringBuilder("anusha");
-     // String actual=sb.reverse();
+      StringBuilder sb=new StringBuilder();
+        System.out.println("1 "+sb);
 
+        sb.append("anusha");
+        System.out.println("2 "+sb);
 
+        StringBuilder actual = sb.reverse();
+        System.out.println( "actual = "+actual);
 
+        /*System.out.println("sb "+sb);
+        StringBuilder expected=sb.append("ahsuna");
 
+        System.out.println("sb "+sb);
+        System.out.println("expected "+expected);
+        System.out.println("actual "+actual); */
 
-
+        assertEquals( "ahsuna",actual.toString());
     }
 }
