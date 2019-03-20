@@ -140,6 +140,8 @@ public class BankTest {
 
     List<Customer> customerDetails = Arrays.asList(anusha, priya, dhanu);
     Bank bank = new Bank("SBI", "BNGLR", customerDetails);
+
+
 }
 
 @Test

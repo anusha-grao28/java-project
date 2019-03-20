@@ -38,6 +38,7 @@ public class ArrayListTest {
     @Test
     public void shouldReturnFalseForAditya(){
 
+        //TODO: remove dead code
      /*   //given  Calculator cal = new Calculator();
         //when  Integer result = cal.add(1, 2);
         //then  Assert.assertEquals(new Integer(3),result);
@@ -52,6 +53,7 @@ public class ArrayListTest {
 
         Assert.assertEquals(false,actual); */
 
+     //TODO: myString is not an appropriate name . it is list , please rename appropriately
         List<String> myString= Arrays.asList("Goutham","Sriraksha","Anusha","Gopal");
         assertThat(myString,not(hasItem("Gopal")));
     }
@@ -72,6 +74,7 @@ public class ArrayListTest {
     public void shouldDisplyListInHigestOrder(){
         List<Integer> myList=Arrays.asList(15,98,45,7,61,34);
         Collections.sort(myList);
+        //TODO : this checks only if the numbers are present... any other methods that can check if they are in the expected order
         assertThat(myList,contains(98,61,45,34,15,7));
 
     }

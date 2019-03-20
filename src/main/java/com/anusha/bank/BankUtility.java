@@ -49,11 +49,18 @@ public class BankUtility {
         return customers;
     }
 
+
     public static Customer getCustomerWithHighestTRansactionHistory(Bank bank){
         List<Customer> customers=bank.getCustomers();
         Comparator<Customer> transHistoryComparator = new Comparator<Customer>() {
             @Override
             public int compare(Customer customer1, Customer customer2) {
+                //TODO: customer2.gettHistory()-customer1.gettHistory(); -- you are substracting two lists.. how is this possible...
+                // better sort the transaction history of each customer by highest amount. get the transaction  then subtract the amounts and send the customer back
+                // so sudo code is as below
+                // TransactionHistory cust1TransHistory = getHighestTransactionHistory(customer1)
+                // TransactionHistory cust2TransHistory = getHighestTransactionHistory(customer2)
+                // return cust1TransHistory.getAmount() - cust2TransHistory.getAmount()
                 return customer2.gettHistory()-customer1.gettHistory();
             }
         };
