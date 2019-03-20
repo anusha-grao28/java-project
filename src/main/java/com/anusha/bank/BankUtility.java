@@ -21,15 +21,7 @@ public class BankUtility {
             System.out.println("Customer "+cust.getName()+" having the deposit "+cust.getAccount().getAmount());
         }
 
-        Comparator<Customer> amountComparator = new Comparator<Customer>() {
-            @Override
-            public int compare(Customer customer1, Customer customer2) {
-                return customer2.getAccount().getAmount() - customer1.getAccount().getAmount();
-            }
-        };
-
-        //lets look at api of sort
-    Collections.sort(customers, amountComparator);
+        cc
 
         System.out.println("After sorting");
           for (Customer customer:customers)
@@ -40,5 +32,34 @@ public class BankUtility {
           // method expects a customer object to be returned
           return customers.get(0);
 
+    }
+
+    public static List<Customer> getCustomerBalanceByAscending(Bank bank){
+        List<Customer> customers=bank.getCustomers();
+
+        Comparator<Customer> amountComparator = new Comparator<Customer>() {
+            @Override
+            public int compare(Customer customer1, Customer customer2) {
+                return customer1.getAccount().getAmount() - customer2.getAccount().getAmount();
+            }
+        };
+
+        //lets look at api of sort
+        Collections.sort(customers, amountComparator);
+        return customers;
+    }
+
+    public static Customer getCustomerWithHighestTRansactionHistory(Bank bank){
+        List<Customer> customers=bank.getCustomers();
+        Comparator<Customer> transHistoryComparator = new Comparator<Customer>() {
+            @Override
+            public int compare(Customer customer1, Customer customer2) {
+                return customer2.gettHistory()-customer1.gettHistory();
+            }
+        };
+
+        //lets look at api of sort
+        Collections.sort(customers, transHistoryComparator);
+        return customers.get(0);
     }
 }

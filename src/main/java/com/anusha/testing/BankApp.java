@@ -14,11 +14,7 @@ public class BankApp {
         Account priyaAccount = new Account(789456, "SBIK1014", 200);
         Account dhanuAccount = new Account(951753, "SBIK1014", 300);
 
-        ArrayList<Account> accounts = new ArrayList<>();
-
-        accounts.add(anushaAccount);
-        accounts.add(priyaAccount);
-        accounts.add(dhanuAccount);
+        List<Account> accounts = Arrays.asList(anushaAccount,priyaAccount,dhanuAccount);
 
         TransactionHistory anuTranHist1 = new TransactionHistory("8-Jun-2018", "savaings", 25000);
         TransactionHistory anuTranHist2 = new TransactionHistory("28-nov-2018", "current", 50000);
@@ -33,20 +29,11 @@ public class BankApp {
         TransactionHistory dhanuTranHist3 = new TransactionHistory("15-Mar-2018", "savaings", 5000);
 
 
-        ArrayList<TransactionHistory> anuTransactionHistory = new ArrayList<>();
-        anuTransactionHistory.add(anuTranHist1);
-        anuTransactionHistory.add(anuTranHist2);
-        anuTransactionHistory.add(anuTranHist3);
+        List<TransactionHistory> anuTransactionHistory = Arrays.asList(anuTranHist1,anuTranHist2,anuTranHist3);
 
-        ArrayList<TransactionHistory> priyaTransactionHistory = new ArrayList<>();
-        anuTransactionHistory.add(priyaTranHist1);
-        anuTransactionHistory.add(priyaTranHist2);
-        anuTransactionHistory.add(priyaTranHist3);
+        List<TransactionHistory> priyaTransactionHistory = Arrays.asList(priyaTranHist1,priyaTranHist2,priyaTranHist3);
 
-        ArrayList<TransactionHistory> dhanuTransactionHistory = new ArrayList<>();
-        anuTransactionHistory.add(dhanuTranHist1);
-        anuTransactionHistory.add(dhanuTranHist2);
-        anuTransactionHistory.add(dhanuTranHist3);
+       List<TransactionHistory> dhanuTransactionHistory =Arrays.asList(dhanuTranHist1,dhanuTranHist2,dhanuTranHist3);
 
         //useless code
         //you have already instantiated arraylist above and filled it with objects.. you can use that
@@ -63,11 +50,8 @@ public class BankApp {
 
         List<Customer> customerDetails = Arrays.asList(anusha, priya, dhanu);
 
-
         Bank bank = new Bank("SBI", "BNGLR", customerDetails);
 
-// use the utitlity class here and output the customer object with the highest amount
- // check if your logic is running fine and fix this by morning. I have to finish work, and will leave it to you.
         Customer highestAmountCustomer = BankUtility.getCustomerWithHighestDeposit(bank);
 
         System.out.println("Customer with highest bank balance is "+ highestAmountCustomer.getName() + " with value "+highestAmountCustomer.getAccount().getAmount());
