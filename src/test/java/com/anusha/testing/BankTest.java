@@ -115,16 +115,16 @@ public class BankTest {
 
     List<Account> accounts = Arrays.asList(anushaAccount,priyaAccount,dhanuAccount);
 
-    TransactionHistory anuTranHist1 = new TransactionHistory("8-Jun-2018", "savaings", 25000);
+    TransactionHistory anuTranHist1 = new TransactionHistory("8-Jun-2018", "savaings", 125000);
     TransactionHistory anuTranHist2 = new TransactionHistory("28-nov-2018", "current", 50000);
     TransactionHistory anuTranHist3 = new TransactionHistory("15-Mar-2018", "savaings", 5000);
 
-    TransactionHistory priyaTranHist1 = new TransactionHistory("8-Jun-2018", "savaings", 25000);
-    TransactionHistory priyaTranHist2 = new TransactionHistory("28-nov-2018", "current", 50000);
-    TransactionHistory priyaTranHist3 = new TransactionHistory("15-Mar-2018", "savaings", 5000);
+    TransactionHistory priyaTranHist1 = new TransactionHistory("8-Jun-2018", "savaings", 250000);
+    TransactionHistory priyaTranHist2 = new TransactionHistory("28-nov-2018", "current", 55000);
+    TransactionHistory priyaTranHist3 = new TransactionHistory("15-Mar-2018", "savaings", 6000);
 
-    TransactionHistory dhanuTranHist1 = new TransactionHistory("8-Jun-2018", "savaings", 25000);
-    TransactionHistory dhanuTranHist2 = new TransactionHistory("28-nov-2018", "current", 50000);
+    TransactionHistory dhanuTranHist1 = new TransactionHistory("8-Jun-2018", "savaings", 95000);
+    TransactionHistory dhanuTranHist2 = new TransactionHistory("28-nov-2018", "current", 100000);
     TransactionHistory dhanuTranHist3 = new TransactionHistory("15-Mar-2018", "savaings", 5000);
 
 
@@ -140,8 +140,9 @@ public class BankTest {
 
     List<Customer> customerDetails = Arrays.asList(anusha, priya, dhanu);
     Bank bank = new Bank("SBI", "BNGLR", customerDetails);
-
-
+    Customer highestTransactionHistory=BankUtility.getCustomerWithHighestTRansactionHistory(bank);
+    Customer actual=highestTransactionHistory;
+    assertThat(priyaTransactionHistory,is(actual));
 }
 
 @Test
