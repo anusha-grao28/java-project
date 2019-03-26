@@ -35,11 +35,6 @@ public class BankApp {
 
        List<TransactionHistory> dhanuTransactionHistory =Arrays.asList(dhanuTranHist1,dhanuTranHist2,dhanuTranHist3);
 
-        //useless code
-        //you have already instantiated arraylist above and filled it with objects.. you can use that
-        // List<Account> accountDetails=Arrays.asList(anushaAccount,priyaAccount,dhanuAccount);
-        //List<TransactionHistory> transHistory=Arrays.asList(anuTranHist1,anuTranHist2,anuTranHist3);
-
         Customer anusha = new Customer("anusha", 26, "28-mar-92", anushaAccount, anuTransactionHistory);
         Customer priya = new Customer("priya", 22, "15-oct-96", priyaAccount, priyaTransactionHistory);
         Customer dhanu = new Customer("dhanu", 32, "05-jan-82", dhanuAccount, dhanuTransactionHistory);
