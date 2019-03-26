@@ -219,6 +219,7 @@ public class BankTest {
     Bank bank = new Bank("SBI", "BNGLR", customerDetails);
     Bank bank1=new Bank("ICICI","BNGLR",customerDetails);
 
+    //TODO: this test is not valid ... you should be passing many banks .. pick all the customers from bank from same town
     List<Customer> actual=BankUtility.getAllCustomersForGivenTown(bank,"BNGLR");
     assertThat(actual,contains(anusha,priya,dhanu));
 }
@@ -327,6 +328,8 @@ public class BankTest {
 
             assertThat(20000,is(actual.getAmount()));
         }
+
+
 
     }
 
