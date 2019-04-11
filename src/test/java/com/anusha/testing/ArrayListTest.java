@@ -38,11 +38,6 @@ public class ArrayListTest {
     @Test
     public void shouldReturnFalseForAditya(){
 
-        //TODO: remove dead code
-     /*   //given  Calculator cal = new Calculator();
-        //when  Integer result = cal.add(1, 2);
-        //then  Assert.assertEquals(new Integer(3),result);
-
         ArrayList<String> myString=new ArrayList<>();
         myString.add("Goutham");
         myString.add("sriraksha");
@@ -51,11 +46,10 @@ public class ArrayListTest {
 
         boolean actual=myString.contains("aditya");
 
-        Assert.assertEquals(false,actual); */
+        Assert.assertEquals(false,actual);
 
-     //TODO: myString is not an appropriate name . it is list , please rename appropriately
-        List<String> myString= Arrays.asList("Goutham","Sriraksha","Anusha","Gopal");
-        assertThat(myString,not(hasItem("Gopal")));
+       /* List<String> nameList= Arrays.asList("Goutham","Sriraksha","Anusha","Gopal");
+        assertThat(nameList,not(hasItem("Gopal"))); */
     }
 
     @Test
@@ -67,6 +61,9 @@ public class ArrayListTest {
 
         list3.addAll(list1);
         list3.addAll(list2);
+
+        //yes
+       // have you done what was written there?
         assertThat(list3,containsInAnyOrder(200,100,400,300,700,500,600));
     }
 

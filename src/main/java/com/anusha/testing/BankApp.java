@@ -20,13 +20,13 @@ public class BankApp {
         TransactionHistory anuTranHist2 = new TransactionHistory("28-nov-2018", "current", 50000);
         TransactionHistory anuTranHist3 = new TransactionHistory("15-Mar-2018", "savaings", 5000);
 
-        TransactionHistory priyaTranHist1 = new TransactionHistory("8-Jun-2018", "savaings", 25000);
-        TransactionHistory priyaTranHist2 = new TransactionHistory("28-nov-2018", "current", 50000);
-        TransactionHistory priyaTranHist3 = new TransactionHistory("15-Mar-2018", "savaings", 5000);
+        TransactionHistory priyaTranHist1 = new TransactionHistory("5-Jun-2018", "savaings", 25000);
+        TransactionHistory priyaTranHist2 = new TransactionHistory("30-nov-2018", "current", 50000);
+        TransactionHistory priyaTranHist3 = new TransactionHistory("25-Mar-2018", "savaings", 5000);
 
-        TransactionHistory dhanuTranHist1 = new TransactionHistory("8-Jun-2018", "savaings", 25000);
-        TransactionHistory dhanuTranHist2 = new TransactionHistory("28-nov-2018", "current", 50000);
-        TransactionHistory dhanuTranHist3 = new TransactionHistory("15-Mar-2018", "savaings", 5000);
+        TransactionHistory dhanuTranHist1 = new TransactionHistory("12-Jun-2018", "savaings", 25000);
+        TransactionHistory dhanuTranHist2 = new TransactionHistory("21-nov-2018", "current", 50000);
+        TransactionHistory dhanuTranHist3 = new TransactionHistory("09-Mar-2018", "savaings", 5000);
 
 
         List<TransactionHistory> anuTransactionHistory = Arrays.asList(anuTranHist1,anuTranHist2,anuTranHist3);
