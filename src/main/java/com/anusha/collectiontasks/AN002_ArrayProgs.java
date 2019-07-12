@@ -57,6 +57,16 @@ public class AN002_ArrayProgs {
         for (int ele : arr)
             System.out.println(ele);
 
+        //7. Create an string array with three elements. replace the second element with the word "auto" .
+        // Print all the elements of the array and check if the word "auto" appears at the third position
 
+      String[] strArray=new String[]{"bus","scooty","bike","car"};
+
+        for(String str:strArray)
+            System.out.println(Arrays.toString(strArray));
+       strArray[1]="auto";
+        System.out.println("after replacing string array : \n");
+        for(String str:strArray)
+        System.out.println(Arrays.toString(strArray));
     }
 }
